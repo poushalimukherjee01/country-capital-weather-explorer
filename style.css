@@ -9,48 +9,125 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* BODY */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Background */
 body {
-    background: #2F4F4F;
-    color: #333;
     min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 2rem;
-    transition: background 0.3s, color 0.3s;
 }
 
-body.dark {
-    background: #1e1e2f;
-    color: #f0f0f0;
+/* Glass Container */
+.app {
+    width: 90%;
+    max-width: 900px;
+    padding: 25px 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+    color: white;
 }
 
-/* NAVBAR */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 900px;
-    padding: 1rem 2rem;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-}
-
-body.dark .navbar {
-    background: #2c2c3e;
+    margin-bottom: 25px;
 }
 
 .logo {
-    font-size: 1.6rem;
+    font-size: 22px;
     font-weight: bold;
 }
 
-/* DARK MODE SWITCH */
+/* Hero */
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    font-size: 16px;
+}
+
+.search-box input::placeholder {
+    color: #aaa;
+}
+
+/* Buttons */
+.search-box button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #6a5acd, #836fff);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px #6a5acd;
+}
+
+/* Results Card */
+.results {
+    margin-top: 15px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #eee;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* Footer */
+.footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Toggle Switch */
 .switch {
     position: relative;
     display: inline-block;
@@ -60,206 +137,85 @@ body.dark .navbar {
 
 .switch input {
     opacity: 0;
-    width: 0;
-    height: 0;
 }
 
 .slider {
     position: absolute;
     cursor: pointer;
+    background-color: #444;
+    border-radius: 24px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #2F4F4F;
     transition: 0.4s;
-    border-radius: 34px;
 }
 
 .slider:before {
-    position: absolute;
     content: "";
+    position: absolute;
     height: 18px;
     width: 18px;
     left: 3px;
     bottom: 3px;
     background-color: white;
-    transition: 0.4s;
     border-radius: 50%;
+    transition: 0.4s;
 }
 
 input:checked+.slider {
-    background-color: #BA324F;
+    background-color: #6a5acd;
 }
 
 input:checked+.slider:before {
     transform: translateX(26px);
 }
 
-/* CONTAINER */
-.container {
-    max-width: 900px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    background-color: #2F4F4F;
-}
-
-/* HERO SECTION */
-.hero {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    width: 100%;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s;
-}
-
-body.dark .hero {
-    background: #555;
-}
-
-.hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero p {
-    font-size: 1.1rem;
-    color: #555;
-}
-
-body.dark .hero p {
-    color: #ccc;
-    background-color: #555;
-}
-
-/* SEARCH BOX */
-.search-box {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 35px 35px ;
-}
-
-.search-box input {
-    padding: 0.8rem 1rem;
-    flex: 1;
-    min-width: 220px;
-    border-radius: 12px;
-    border: 1px solid #ccc;
-    outline: none;
-    font-size: 1rem;
-}
-
-body.dark .search-box input {
-    background: #444;
-    border: 1px solid #555;
-    color: #f0f0f0;
-}
-
-.search-box button {
-    padding: 20px 15px ;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    background: #BA324F;
-    color: #fff;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.search-box button:hover {
-    background: #BA324F;
-}
-
-/* RESULTS CARD */
-.results {
-    background: #ffffff;
-    padding: 40px 40px ;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    min-height: 180px;
-    transition: background 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-body.dark .results {
-    background: #2c2c3e;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    color: #777;
-    font-size: 0.9rem;
-}
-
-body.dark .footer {
-    color: #ffffff;
-}
-
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 600px) {
-    .search-box {
-        flex-direction: column;
-        align-items: center;
+    .hero h1 {
+        font-size: 22px;
     }
 
-    .search-box input {
-        width: 100%;
-    }
-
-    .navbar {
-        flex-direction: column;
-        gap: 1rem;
+    .app {
+        padding: 20px;
     }
 }
+
 .weather-card {
-  background: #ffffff;
-  padding: 20px 30px ;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 250px;
-  margin: 1rem 0;
-  text-align: center;
-  transition: transform 0.3s;
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 250px;
+    margin: 1rem 0;
+    text-align: center;
+    transition: transform 0.3s;
 }
 
 .weather-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 body.dark .weather-card {
-  background: #2c2c3e;
-  color: #f0f0f0;
+    background: #2c2c3e;
+    color: #f0f0f0;
 }
 
 dark .weather-card h2 {
-  margin-bottom: 0.5rem;
-background-color:#2c2c3e;
-color : #3a3a4f;
- 
+    margin-bottom: 0.5rem;
+    background-color: #2c2c3e;
+    color: #3a3a4f;
+
 }
 
 .weather-card p {
-  margin: 0.3rem 0;
-  font-size: 1rem;
+    margin: 0.3rem 0;
+    font-size: 1rem;
 }
 
-.error {
+/* .error {
   color: #d9534f;
   font-weight: bold;
   text-align: center;
@@ -272,23 +228,24 @@ body.dark-mode {
 
 /* Card */
 body.dark-mode .result-card {
-  background-color: #1e1e1e;
-  color: #fff;
+    background-color: #1e1e1e;
+    color: #fff;
 }
 
 /* Input fields */
-body.dark-mode input, 
+body.dark-mode input,
 body.dark-mode textarea {
-  background-color: #222;
-  color: #e0e0e0;
-  border: 1px solid #444;
+    background-color: #222;
+    color: #e0e0e0;
+    border: 1px solid #444;
 }
 
 /* Toggle switch styling stays the same */
 .switch .slider {
-  background-color: #ccc;
+    background-color: #ccc;
 }
 
 body.dark-mode .switch .slider {
-  background-color: #555;
+    background-color: #555;
 }
+

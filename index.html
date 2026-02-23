@@ -8,46 +8,58 @@
   <link rel="stylesheet" href="style.css">
 
 <body>
+  <div class="app">
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">🌍 Globe Weather</div>
-    <!-- Dark Mode Toggle -->
-    <label class="switch">
-      <input type="checkbox" id="darkModeToggle">
-      <span class="slider round"></span>
-    </label>
-  </nav>
-  <div class="container">
-    <!-- Hero / Home Section -->
-    <div class="hero" id="home">
-      <h1>Country & Capital Weather Explorer</h1>
-      <p>Search any country to see its details and live weather updates.</p>
-      <div class="search-box">
-        <input type="text" id="countryInput" placeholder="Enter country name">
-        <button id="searchBtn">Search</button>
-        <button id="geoBtn">🌍 Use My Location</button>
-        <!-- Results Card -->
-        <div id="results" class="results">
-          <p>Search results will appear here...</p>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">🌍 Globe Weather</div>
+
+      <!-- Dark Mode Toggle -->
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+
+      <!-- Hero Section -->
+      <div class="hero" id="home">
+        <h1>Country & Capital Weather Explorer</h1>
+        <p>Search any country to see its details and live weather updates.</p>
+
+        <!-- Search Box -->
+        <div class="search-box">
+          <input type="text" id="countryInput" placeholder="Enter country name">
+
+          <button id="searchBtn">Search</button>
+          <button id="geoBtn">🌍 Use My Location</button>
+
+          <!-- Results Card -->
+          <div id="results" class="results">
+            <p>Search results will appear here...</p>
+          </div>
         </div>
       </div>
+
     </div>
 
-    <!-- Search Box -->
+    <!-- Footer -->
+    <div class="footer">
+      © 2025 Globe Weather | Built with ❤️ by <strong>Poushali Mukherjee</strong>
+    </div>
 
   </div>
+</body>
 
 
 
-  <!-- Footer -->
-  <div class="footer">
-    © 2025 Globe Weather | Built with ❤️ by <strong>Poushali Mukherjee </strong>
-  </div>
 
-  <!-- Scripts -->
-  <script src="config.js"></script>
-  <script src="script.js"></script>
+
+<!-- Scripts -->
+<script src="config.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
